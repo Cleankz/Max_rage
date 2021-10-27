@@ -26,5 +26,3 @@ def MadMax(N, Tele = []):
                 Tele[j], Tele[j+1] = Tele[j+1], Tele[j]
                 ychange = True
     return Tele
-
-print(MadMax(11,[11,42,39,25,12,15,28,32,10,5,41]))
