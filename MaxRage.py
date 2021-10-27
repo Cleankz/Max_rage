@@ -3,12 +3,21 @@ def MadMax(N, Tele = []):
     num = 0
     index = 0
     mid = N // 2
+    zchange = True 
+    while(zchange):
+        zchange = False 
+        for i in range(N-1):
+            if Tele[i] > Tele[i+1]:
+                Tele[i], Tele[i+1] = Tele[i+1], Tele[i]
+                zchange = True
+                
     for i in range(N):
         if Tele[i] > num:
             num = Tele[i]
             index = i
     Tele[index] = Tele[mid]
     Tele[mid] = num
+    
     xchange = True 
     while(xchange):
         xchange = False 
