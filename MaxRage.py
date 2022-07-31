@@ -2,7 +2,11 @@ import random
 def MadMax(N, Tele = []):
     num = 0
     index = 0
-    mid = N // 2
+    try:
+        mid = N // 2
+    except ZeroDivisionError:
+        print("Деление на 0 !!!")
+        
     zchange = True 
     while(zchange):
         zchange = False 
@@ -12,9 +16,12 @@ def MadMax(N, Tele = []):
                 zchange = True
                 
     for i in range(N):
-        if Tele[i] > num:
-            num = Tele[i]
-            index = i
+        try:
+            if Tele[i] > num:
+                num = Tele[i]
+                index = i
+        except IndexError:
+            print("Индекс за пределами массива!")
     Tele[index] = Tele[mid]
     Tele[mid] = num
     
